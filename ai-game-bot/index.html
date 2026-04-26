@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Snake Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <canvas id="gameCanvas" width="640" height="480"></canvas>
+            <div id="gameOverOverlay" class="hidden">
+                <h2>Game Over!</h2>
+                <p>Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn">Play Again</button>
+            </div>
+        </div>
+        
+        <div class="sidebar glass-panel">
+            <h1>Snake AI <span class="badge">PRO</span></h1>
+            
+            <div class="control-group">
+                <label>Game Mode</label>
+                <div class="toggle-container">
+                    <button id="modeManual" class="mode-btn active">Manual</button>
+                    <button id="modeAI" class="mode-btn">AI Auto-Pilot</button>
+                </div>
+            </div>
+            
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <span class="stat-label">Score</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Record</span>
+                    <span id="record" class="stat-value">0</span>
+                </div>
+                <div class="stat-card ai-stat">
+                    <span class="stat-label">Game Epoch</span>
+                    <span id="games" class="stat-value">0</span>
+                </div>
+                <div class="stat-card ai-stat">
+                    <span class="stat-label">Epsilon</span>
+                    <span id="epsilon" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div class="server-status">
+                <div id="statusDot" class="status-dot disconnected"></div>
+                <span id="statusText">AI Server Disconnected</span>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
